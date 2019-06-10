@@ -5,6 +5,7 @@ RUN apk update && \
     update-ca-certificates; \
     (curl https://sdk.cloud.google.com | bash) && \
     /root/google-cloud-sdk/bin/gcloud config set --installation component_manager/disable_update_check true; \
+    /root/google-cloud-sdk/bin/gcloud components install kubectl; \
     apk del --purge .fetch-deps; \
     rm -rf /var/cache/apk/*; \
     rm -fr /tmp/*; \
